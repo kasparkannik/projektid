@@ -53,7 +53,6 @@ public class MainClass {
 //Kustutab ekraanilt laulu nime
             MainGui.Display.setText("");
         }
-
     }
 
     /**
@@ -67,7 +66,6 @@ public class MainClass {
             } catch (IOException ex) {
             }
         }
-
     }
 
     /**
@@ -93,7 +91,6 @@ public class MainClass {
                 }
             }
         }.start();
-
     }
 
     /**
@@ -137,7 +134,5 @@ public class MainClass {
                 }
             }
         }.start();
-
     }
-
 }
