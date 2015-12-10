@@ -23,8 +23,8 @@ public class MainGui extends javax.swing.JDialog {
     int xMouse;
     int yMouse;
 
-    int width = (Toolkit.getDefaultToolkit().getScreenSize().width / 2) - 185;
-    int height = Toolkit.getDefaultToolkit().getScreenSize().height - 180;
+    int width = Toolkit.getDefaultToolkit().getScreenSize().width;
+    int height = Toolkit.getDefaultToolkit().getScreenSize().height
 
     /**
      *
@@ -179,7 +179,6 @@ public class MainGui extends javax.swing.JDialog {
             Display.setText(name);
 
             mainC.Play(song);
-
         }
     }                                        
 
