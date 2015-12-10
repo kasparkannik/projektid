@@ -35,11 +35,12 @@ public class MainGui extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+
     /**
-     * GUI ning Netbeansi poolt automaatselt genereeritud kood
+     * Graafiline liides
      */
     @SuppressWarnings("unchecked")
-                              
+                            
     private void initComponents() {
 
         Play = new javax.swing.JLabel();
@@ -51,7 +52,6 @@ public class MainGui extends javax.swing.JDialog {
         Display = new javax.swing.JLabel();
         LoopCount = new javax.swing.JLabel();
         Mute = new javax.swing.JLabel();
-        Slider = new javax.swing.JSlider();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -106,22 +106,19 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(Close, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 20, 20));
 
-        Display.setFont(new java.awt.Font("Century Gothic", 0, 24)); 
+        Display.setFont(new java.awt.Font("Century Gothic", 0, 24));
         Display.setForeground(new java.awt.Color(204, 204, 204));
         Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 220, 70));
 
-        LoopCount.setFont(new java.awt.Font("OCR A Extended", 0, 12)); 
+        LoopCount.setFont(new java.awt.Font("OCR A Extended", 0, 12));
         LoopCount.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(LoopCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 174, 70, 30));
 
         Mute.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(Mute, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 104, 20, 20));
 
-        Slider.setPaintTicks(true);
-        getContentPane().add(Slider, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 106, 60, 20));
-
-        Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kaspar\\Desktop\\Background.png"));
+        Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kaspar\\Desktop\\Background.png")); 
         Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Background.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -208,6 +205,7 @@ public class MainGui extends javax.swing.JDialog {
      */
     public static void main(String args[]) {
 
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -225,7 +223,6 @@ public class MainGui extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(MainGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MainGui dialog = new MainGui(new javax.swing.JFrame(), true);
@@ -240,7 +237,6 @@ public class MainGui extends javax.swing.JDialog {
         });
     }
 
-                       
     private javax.swing.JLabel Background;
     private javax.swing.JLabel Close;
     public static javax.swing.JLabel Display;
@@ -250,7 +246,6 @@ public class MainGui extends javax.swing.JDialog {
     private javax.swing.JLabel Pause;
     private javax.swing.JLabel Play;
     private javax.swing.JLabel SelectFile;
-    private javax.swing.JSlider Slider;
     private javax.swing.JLabel Stop;
-                      
+                  
 }
