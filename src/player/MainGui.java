@@ -1,5 +1,4 @@
-package player;
-
+package mediaplayer;
 
 import java.awt.Toolkit;
 import java.io.File;
@@ -7,13 +6,19 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+/**
+ * @author Kaspar
+ * @version 1.0
+ * @since 
+ */
 public class MainGui extends javax.swing.JDialog {
 
     MainClass mainC = new MainClass();
 
+    /**
+     * Muutuja count näitab, kas parajasti lugu on loop'is või ei ole
+     */
     public static int count;
-
-    public static int mute;
 
     int xMouse;
     int yMouse;
@@ -21,13 +26,20 @@ public class MainGui extends javax.swing.JDialog {
     int width = (Toolkit.getDefaultToolkit().getScreenSize().width / 2) - 185;
     int height = Toolkit.getDefaultToolkit().getScreenSize().height - 180;
 
+    /**
+     *
+     * @param parent
+     * @param modal
+     */
     public MainGui(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
-
+    /**
+     * GUI ning Netbeansi poolt automaatselt genereeritud kood
+     */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+                              
     private void initComponents() {
 
         Play = new javax.swing.JLabel();
@@ -40,13 +52,13 @@ public class MainGui extends javax.swing.JDialog {
         LoopCount = new javax.swing.JLabel();
         Mute = new javax.swing.JLabel();
         Slider = new javax.swing.JSlider();
-        val = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Play.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Play.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 PlayMouseReleased(evt);
@@ -54,6 +66,7 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 94, 30, 40));
 
+        Pause.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Pause.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 PauseMouseReleased(evt);
@@ -61,6 +74,7 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(Pause, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 94, 30, 40));
 
+        Stop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Stop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 StopMouseReleased(evt);
@@ -68,6 +82,7 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(Stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 104, 30, 30));
 
+        Loop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Loop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 LoopMouseReleased(evt);
@@ -75,6 +90,7 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(Loop, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 104, 30, 30));
 
+        SelectFile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SelectFile.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 SelectFileMouseReleased(evt);
@@ -82,6 +98,7 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(SelectFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 94, 20, 40));
 
+        Close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 CloseMouseReleased(evt);
@@ -89,36 +106,23 @@ public class MainGui extends javax.swing.JDialog {
         });
         getContentPane().add(Close, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 20, 20));
 
-        Display.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        Display.setFont(new java.awt.Font("Century Gothic", 0, 24)); 
         Display.setForeground(new java.awt.Color(204, 204, 204));
         Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 220, 70));
 
-        LoopCount.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
+        LoopCount.setFont(new java.awt.Font("OCR A Extended", 0, 12)); 
         LoopCount.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(LoopCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 174, 70, 30));
 
-        Mute.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                MuteMousePressed(evt);
-            }
-        });
+        Mute.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(Mute, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 104, 20, 20));
 
         Slider.setPaintTicks(true);
-        Slider.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                SliderStateChanged(evt);
-            }
-        });
         getContentPane().add(Slider, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 106, 60, 20));
 
-        val.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
-        val.setForeground(new java.awt.Color(204, 204, 204));
-        val.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(val, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 60, 20));
-
-        Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kaspar\\Desktop\\Background.png")); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kaspar\\Desktop\\Background.png"));
+        Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Background.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 BackgroundMouseDragged(evt);
@@ -132,34 +136,34 @@ public class MainGui extends javax.swing.JDialog {
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }                       
 
-    private void StopMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StopMouseReleased
+    private void StopMouseReleased(java.awt.event.MouseEvent evt) {                                   
         mainC.Stop();
-    }//GEN-LAST:event_StopMouseReleased
+    }                                  
 
-    private void BackgroundMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackgroundMouseDragged
+    private void BackgroundMouseDragged(java.awt.event.MouseEvent evt) {                                        
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
 
         this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_BackgroundMouseDragged
+    }                                       
 
-    private void BackgroundMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackgroundMousePressed
+    private void BackgroundMousePressed(java.awt.event.MouseEvent evt) {                                        
         xMouse = evt.getX();
         yMouse = evt.getY();
-    }//GEN-LAST:event_BackgroundMousePressed
+    }                                       
 
-    private void PlayMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlayMouseReleased
-
+    private void PlayMouseReleased(java.awt.event.MouseEvent evt) {                                   
         mainC.Resume();
-    }//GEN-LAST:event_PlayMouseReleased
+    }                                  
 
-    private void PauseMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PauseMouseReleased
+    private void PauseMouseReleased(java.awt.event.MouseEvent evt) {                                    
         mainC.Pause();
-    }//GEN-LAST:event_PauseMouseReleased
+    }                                   
 
-    private void SelectFileMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SelectFileMouseReleased
+    private void SelectFileMouseReleased(java.awt.event.MouseEvent evt) {                                         
+//Filtreeritakse välja ainult .mp3 faililaiendiga failid        
         FileFilter filter = new FileNameExtensionFilter("MP3 Files", "mp3", "mpeg3");
         JFileChooser chooser = new JFileChooser("Desktop");
         chooser.addChoosableFileFilter(filter);
@@ -167,18 +171,20 @@ public class MainGui extends javax.swing.JDialog {
         int returnVal = chooser.showOpenDialog(null);
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
+//Stop meetodit kasutades peatab kõik eelnevad lood, et ei tekiks lõpmatut loopi            
             mainC.Stop();
             File myFile = chooser.getSelectedFile();
             String song = myFile + "";
+//Võtab faili nime ning kuvab ekraanile            
             String name = chooser.getSelectedFile().getName();
             Display.setText(name);
 
             mainC.Play(song);
 
         }
-    }//GEN-LAST:event_SelectFileMouseReleased
+    }                                        
 
-    private void LoopMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoopMouseReleased
+    private void LoopMouseReleased(java.awt.event.MouseEvent evt) {                                   
         switch (count) {
             case 0:
                 count = 1;
@@ -189,36 +195,17 @@ public class MainGui extends javax.swing.JDialog {
                 LoopCount.setText("Loop off");
                 break;
         }
-    }//GEN-LAST:event_LoopMouseReleased
+    }                                  
 
-    private void CloseMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseMouseReleased
+    private void CloseMouseReleased(java.awt.event.MouseEvent evt) {                                    
         dispose();
-    }//GEN-LAST:event_CloseMouseReleased
+    }                                   
 
-    private void MuteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MuteMousePressed
-        switch (count) {
-            case 0:
-                count = 1;
-
-                break;
-            case 1:
-                count = 0;
-
-                break;
-        }
-    }//GEN-LAST:event_MuteMousePressed
-
-    private void SliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderStateChanged
-
-        val.setText("" + Slider.getValue() + "");
-    }//GEN-LAST:event_SliderStateChanged
-
+    /**
+     * @param args
+     */
     public static void main(String args[]) {
 
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -235,7 +222,7 @@ public class MainGui extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainGui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -251,7 +238,7 @@ public class MainGui extends javax.swing.JDialog {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+                       
     private javax.swing.JLabel Background;
     private javax.swing.JLabel Close;
     public static javax.swing.JLabel Display;
@@ -263,6 +250,5 @@ public class MainGui extends javax.swing.JDialog {
     private javax.swing.JLabel SelectFile;
     private javax.swing.JSlider Slider;
     private javax.swing.JLabel Stop;
-    private javax.swing.JLabel val;
-    // End of variables declaration//GEN-END:variables
+                      
 }
