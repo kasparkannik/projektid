@@ -137,6 +137,8 @@ public class MainGui extends javax.swing.JDialog {
 
         pack();
     }                       
+//Automaatselt genereeritud koodi lõpp
+
 
     private void StopMouseReleased(java.awt.event.MouseEvent evt) {                                   
         mainC.Stop();
