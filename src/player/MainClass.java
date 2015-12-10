@@ -8,7 +8,6 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 /**
- *
  * @author Kaspar
  * @version 1.0
  */
