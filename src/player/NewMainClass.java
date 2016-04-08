@@ -65,6 +65,7 @@ public class MainClass {
                 player.close();
             } catch (IOException ex) {
             }
+
         }
     }
 
@@ -82,6 +83,26 @@ public class MainClass {
         } catch (IOException ex) {
         }
 
+private void LoopMouseReleased (java.awt.event.EventListener event evt){
+
+Switch (count) {
+
+case 0:
+
+Count = 0;
+CountLoop.setText("loop on");
+break;
+
+case 1:
+
+Count = 1;
+CountLoop.setText("loop off");
+break;
+
+}
+}
+
+
         new Thread() {
             @Override
             public void run() {
@@ -89,7 +110,13 @@ public class MainClass {
                     player.play();
                 } catch (JavaLayerException ex) {
                 }
-            }
+            System.out.println ("edukas");
+For(player; Resume; i++){ if
+(player != 0
+Resume.start;)
+ Else {Resume.stop};'
+}
+ }
         }.start();
     }
 
